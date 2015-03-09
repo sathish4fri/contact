@@ -11,7 +11,7 @@
 
 define('__contact_PATH__', ossn_route()->com . 'contact/');
 
-function mycom_init() {
+function contact_init() {
 	//don't register again and again for each component
 	//register at onece
 	ossn_register_com_panel('contact', 'settings');
@@ -40,4 +40,4 @@ function contact_page_handler($page) {
 	  
 }
 
-ossn_register_callback('ossn', 'init', 'mycom_init');
+ossn_register_callback('ossn', 'init', 'contact_init');
