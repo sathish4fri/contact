@@ -10,6 +10,9 @@
  */
 $subject= "Contact form Page";
 $message = input('message');
+$message = html_entity_decode($message, ENT_QUOTES, "UTF-8");
+$message = strip_tags($message);
+$message = ossn_restore_new_lines($message);
 $name = input('name');
 $cemail = input('email');
 
