@@ -11,14 +11,15 @@
 $OssnComponents = new OssnComponents;
 
 $email = input('email');
-//$gmap = input('gmap');
-//echo $email;
-//&& $OssnComponents->setComSETTINGS('contact', 'gmap', $gmap) for gmap iframe 
-//for single value
-if($OssnComponents->setComSETTINGS('contact', 'email', $email)){
-    ossn_trigger_message('Settings saved');
-    redirect(REF);
-} else {
-    ossn_trigger_message('Cannot save settings', 'error');
-    redirect(REF);
+if(isset($email))
+{
+	if($OssnComponents->setComSETTINGS('contact', 'email', $email)){
+		ossn_trigger_message('Settings saved');
+		redirect(REF);
+	} else {
+		ossn_trigger_message('Cannot save settings', 'error');
+		redirect(REF);
+	}
+}else{
+	ossn_trigger_message('Please Enter the value ', 'error');
 }
