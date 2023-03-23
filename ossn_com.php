@@ -10,6 +10,7 @@
  */
 
 define('__CONTACT__', ossn_route()->com . 'Contact/');
+require_once(__CONTACT__ . 'classes/contact.php');
 
 function contact_init() {
 	if(ossn_isAdminLoggedin()){
