@@ -2,14 +2,14 @@
 <component xmlns="http://www.opensource-socialnetwork.org/v/3.0">
     <name>Contact</name>
     <id>Contact</id>
-    <author>Core Developers | sathish Kumar | Syed Arsalan Hussain Shah</author>
+    <author>Core Developers | Sathish Kumar | Syed Arsalan Hussain Shah</author>
     <description>Contact page for ossn</description>
-    <license>GNU General Public License, version 2</license>
+    <license>Open Source Social Network License (OSSN LICENSE)</license>
     <author_url>http://www.webbehinds.com/</author_url>
     <license_url>http://www.opensource-socialnetwork.org/licence/</license_url>
-    <version>2.3</version>
+    <version>3.1</version>
 	<requires>
 		<type>ossn_version</type>
-		<version>3.0</version>
+		<version>5.2</version>
 	</requires>
 </component>

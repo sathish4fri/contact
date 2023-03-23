@@ -1,19 +1,41 @@
 <?php
 /**
- *    OpenSource-SocialNetwork
+ * Open Source Social Network
  *
- * @package   (webbehinds.com).ossn
- * @author    OSSN Core Team | Sathish Kumar <info@opensource-socialnetwork.com>
- * @copyright 2014 webbehinds
- * @license   General Public Licence http://opensource-socialnetwork.com/licence
- * @link      http://www.opensource-socialnetwork.com/licence
+ * @package   Open Source Social Network
+ * @author    Open Social Website Core Team | Sathish Kumar <info@softlab24.com>
+ * @copyright (C) SOFTLAB24 LIMITED, 2014 webbehinds
+ * @license   Open Source Social Network License (OSSN LICENSE)  http://www.opensource-socialnetwork.org/licence
+ * @link      https://www.opensource-socialnetwork.org/
  */
 $en = array(
-    'contact' => 'Contact',
-    'contact:body' => 'Name 	: %s
+	// site frontend
+    'contact:form:title' => 'Contact Us',
+	'contact:form:description' => 'Please fill out all fields',
+	'contact:form:name' => 'Your Name',
+	'contact:form:email' => 'Your Email',
+	'contact:form:message' => 'Message',
+	'contact:form:button:send' => 'Submit',
+	
+	'contact:form:message:sent' => 'Your Message was sent!',
+	'contact:form:message:incomplete' => 'Please fill out all fields',
+	'contact:form:message:not:sent' => 'Your message could not be sent due to a technical problem. Please try again later.',
 
-Email 	: %s		
+	// admin backend
+	'contact' => 'Contact', // Configure menu entry - don't translate
+	'contact:admin:form:label:contactform:receiver' => 'Email address to which the contact form should be sent',
+	'contact:admin:form:label:contactform:top:html' => 'Any text or HTML that should appear above the contact form, e.g. an IFRAME with a road map',
+	'contact:admin:form:button:save' => 'Save',
+	'contact:admin:settings:email:invalid' => 'Please enter a valid email address',
 
-Message  : %s ',
+	// mailer
+	'contact:mail:subject' => 'Contact request',
+	'contact:mail:body' => '
+You received a message from
+
+Name : %s
+Email: %s	
+
+%s ',
 );
 ossn_register_languages('en', $en); 
