@@ -30,8 +30,8 @@ if(!empty($message) && !empty($cemail) && !empty($name)) {
 		ossn_trigger_message(ossn_print('contact:admin:settings:email:invalid'), 'error');
 		redirect(REF);
 	}
-	$mail = new OssnMail;
-	if($mail->NotifiyUser($email, $subject, $body)){
+	$mail = new Contact;
+	if ($mail->NotifiyUserWithReplyTo($email, $subject . "  - ID: " . time(), $body, $cemail, $name)) { //add id = timestamp to prevent group by subject 
 		ossn_trigger_message(ossn_print('contact:form:message:sent'));
 		redirect(REF);
 	}
