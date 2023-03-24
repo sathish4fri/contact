@@ -17,9 +17,3 @@
 <textarea name="map"><?php echo $params['settings']->map;?></textarea>
 <br>
 <input type="submit" class="ossn-admin-button btn btn-success" value="<?php echo ossn_print('contact:admin:form:button:save'); ?>"/>
-
-
-
-
-
-
