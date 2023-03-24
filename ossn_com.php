@@ -1,43 +1,35 @@
 <?php
 /**
- *    OpenSource-SocialNetwork
+ * Open Source Social Network
  *
- * @package   (webbehinds.com).ossn
- * @author    OSSN Core Team <info@opensource-socialnetwork.com>
- * @copyright 2014 iNFORMATIKON TECHNOLOGIES 
- * @license   General Public Licence http://opensource-socialnetwork.com/licence
- * @link      http://www.opensource-socialnetwork.com/licence
+ * @package   Open Source Social Network
+ * @author    Open Social Website Core Team | Sathish Kumar <info@softlab24.com>
+ * @copyright (C) SOFTLAB24 LIMITED, 2014 webbehinds
+ * @license   Open Source Social Network License (OSSN LICENSE)  http://www.opensource-socialnetwork.org/licence
+ * @link      https://www.opensource-socialnetwork.org/
  */
 
-define('__contact_PATH__', ossn_route()->com . 'Contact/');
+define('__CONTACT__', ossn_route()->com . 'Contact/');
+require_once(__CONTACT__ . 'classes/contact.php');
 
 function contact_init() {
-	//don't register again and again for each component
-	//register at onece
-	ossn_register_com_panel('contact', 'settings');
-	
-	//add actio for save settings
 	if(ossn_isAdminLoggedin()){
-		ossn_register_action('admin/contact/settings', __contact_PATH__ . 'actions/save.php');		
+		ossn_register_com_panel('Contact', 'settings');
+		ossn_register_action('Contact/admin/settings', __CONTACT__ . 'actions/Contact/admin/settings.php');		
 	}	
-	ossn_register_action('contact',__contact_PATH__ . 'actions/contactmail.php');
-	ossn_extend_view('css/ossn.default', 'css/style');
-	//register page handler
+	ossn_register_action('Contact/contactmail', __CONTACT__ . 'actions/Contact/contactmail.php');
 	ossn_register_page('contact', 'contact_page_handler');
-	ossn_register_menu_link('Contact', ossn_print('contact'), ossn_site_url('contact'), 'footer');
+	ossn_register_menu_link('Contact', ossn_print('contact:form:title'), ossn_site_url('contact'), 'footer');
 }
 
 function contact_page_handler($page) {
-	//$page = $pages[0];
-    if (empty($page)) {
-        redirect(REF);
-    }
-		  $params['title'] = ossn_print('Contact');
-        	$title = $params['title'];
-            $contents = array('content' => ossn_plugin_view('pages/page', $params),);
-            $content = ossn_set_page_layout('contents', $contents);
-            echo ossn_view_page($title, $content);			
-	  
+	if (empty($page)) {
+		redirect(REF);
+	}
+	$title = ossn_print('contact:form:title');
+	$contents = array('content' => ossn_plugin_view('pages/contactpage'));
+	$content = ossn_set_page_layout('contents', $contents);
+	echo ossn_view_page($title, $content);			
 }
 
 ossn_register_callback('ossn', 'init', 'contact_init');

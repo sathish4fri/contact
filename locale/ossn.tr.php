@@ -38,4 +38,4 @@ Email: %s
 
 %s ',
 );
-ossn_register_languages('en', $en); 
+ossn_register_languages('tr', $en); 
